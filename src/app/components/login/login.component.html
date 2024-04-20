@@ -1,0 +1,57 @@
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="handelRegistar()"
+  class="w-75 mx-auto"
+>
+  <div class="form-item">
+    <label for="email">email</label>
+    <input
+      formControlName="email"
+      type="email"
+      id="email"
+      class="form-control"
+    />
+    <div
+      *ngIf="
+        loginForm.get('email')?.touched && loginForm.get('email')?.errors
+      "
+      class="alert alert-danger"
+    >
+      <p *ngIf="loginForm.get('email')?.getError('required')">
+        email is required
+      </p>
+      <p *ngIf="loginForm.get('email')?.getError('minlength')">
+        email inValid Formapassword 3
+      </p>
+    </div>
+  </div>
+  <div class="form-item">
+    <label for="password">password</label>
+    <input
+      formControlName="password"
+      type="password"
+      id="password"
+      class="form-control"
+    />
+    <div
+      *ngIf="
+        loginForm.get('password')?.touched &&
+        loginForm.get('password')?.errors
+      "
+      class="alert alert-danger"
+    >
+      <p *ngIf="loginForm.get('password')?.getError('required')">
+        password is required
+      </p>
+      <p *ngIf="loginForm.get('password')?.getError('pattern')">
+        must be at least 6 char
+      </p>
+    </div>
+  </div>
+
+  <button [disabled]="loginForm.invalid" class="main-btn mt-4" type="submit">
+    Login
+    <span *ngIf="isLoding"> <i class="fas fa-spin fa-spinner"></i> </span>
+  </button>
+  <p *ngIf="errmsg" class="alert alert-danger">{{ errmsg }}</p>
+</form>

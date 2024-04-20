@@ -1,0 +1,36 @@
+<section>
+  <form
+    class="w-75 mx-auto bg-main-clor rounded shadow p-3"
+    [formGroup]="checkForm"
+    (ngSubmit)="handelForm()"
+  >
+    <div>
+      <label for="details"> details </label>
+      <input
+        type="text"
+        class="form-control"
+        id="details"
+        formControlName="details"
+      />
+    </div>
+    <div>
+      <label for="phone"> phone </label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        formControlName="phone"
+      />
+    </div>
+    <div>
+      <label for="city"> city </label>
+      <input
+        type="text"
+        class="form-control"
+        id="city"
+        formControlName="city"
+      />
+    </div>
+    <button type="submit" class="main-btn">CheckOut</button>
+  </form>
+</section>

@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300&display=swap');
+$main-color: #0aad0a;
+$light-color: #f0f3f2;
+$shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.2) 0px 1px 10px 0px;
+$rating-color: #ffc908;
+$main-transition: 0.8s;
+
+.body {
+    font-family: "Encode Sans", sans-serif;
+}
+
+.rating-color {
+    color: $rating-color;
+}
+
+.text-main {
+    color: $main-color;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.bg-main-clor {
+    background-color: $light-color;
+}
+
+.main-btn {
+    background-color: $main-color;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: unset;
+}
+
+.main-btn:disabled {
+    background-color: #0a560a;
+    color: #292d2c;
+    cursor: not-allowed;
+}
+
+.font-sm {
+    font-size: 12px;
+}
+
+.active-link {
+    background-color: $main-color;
+    color: #fff;
+    border-radius: 5px;
+}
+
+img {
+    width: 100px;
+}

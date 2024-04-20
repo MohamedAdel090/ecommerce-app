@@ -1,0 +1,89 @@
+<section>
+  <div class="row g-0">
+    <div class="col-md-8">
+      <owl-carousel-o [options]="mainSlider">
+        <ng-template carouselSlide>
+          <img
+            height="400"
+            class="w-100"
+            src="./assets/imag/images (15).jpg"
+            alt=""
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            class="w-100"
+            height="400"
+            src="./assets/imag/images (5).jpeg"
+            alt=""
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img class="w-100" height="400" src="./assets/imag/16.jpg" alt="" />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img class="w-100" height="400" src="./assets/imag/17.jpg" alt="" />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img class="w-100" height="400" src="./assets/imag/18.jpg" alt="" />
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+    <div class="col-md-4">
+      <img
+        class="w-100"
+        height="200"
+        src="./assets/imag/download.jpeg"
+        alt=""
+      />
+      <img
+        class="w-100"
+        height="200"
+        src="./assets/imag/images (5).jpeg"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+<section>
+  <h2>shop Categories</h2>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let item of categories">
+      <ng-template carouselSlide>
+        <img
+          class="object-fet-cover"
+          height="260"
+          [src]="item.image"
+          [alt]="item.name"
+          [title]="item.name"
+        />
+        <h3 class="h6 text-main">{{ item.name }}</h3>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</section>
+<section>
+  <div class="row g-4">
+    <div *ngFor="let item of products" class="col-md-6 col-xl-2">
+      <div class="card h-100">
+        <div role="button" [routerLink]="['/details', item._id]">
+          <img class="card-img-top" [src]="item.imageCover" alt="Title" />
+          <div class="card-body">
+            <h4 class="card-title h6">{{ item.title | cuttext }}</h4>
+            <p class="card-text h6 text-main">{{ item.category.name }}</p>
+          </div>
+          <div class="px-3 d-flex justify-content-between align-items-center">
+            <span class="small">{{ item.price | currency : "EGP" }}</span>
+            <span class="small">
+              <i class="fas fa-star rating-color"></i
+              >{{ item.ratingsAverage }}</span
+            >
+          </div>
+        </div>
+        <button (click)="addProduct(item._id)" class="main-btn">
+          +add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
