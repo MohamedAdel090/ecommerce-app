@@ -19,11 +19,11 @@ export const routes: Routes = [
     path: '', component: BlankLayoutComponent, children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', canActivate: [AuthGuard], component: HomeComponent },
-      { path: 'products', canActivate: [authGuard], component: ProductsComponent },
-      { path: 'details/:id', canActivate: [authGuard], component: DetailsproductComponent },
-      { path: 'categories', canActivate: [authGuard], component: CategoriesComponent },
-      { path: 'brands', canActivate: [authGuard], component: BrandesComponent },
-      { path: 'cart', canActivate: [authGuard], component: CartComponent },
+      { path: 'products', canActivate: [AuthGuard], component: ProductsComponent },
+      { path: 'details/:id', canActivate: [AuthGuard], component: DetailsproductComponent },
+      { path: 'categories', canActivate: [AuthGuard], component: CategoriesComponent },
+      { path: 'brands', canActivate: [AuthGuard], component: BrandesComponent },
+      { path: 'cart', canActivate: [AuthGuard], component: CartComponent },
     ]
   },
 
