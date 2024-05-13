@@ -11,7 +11,8 @@ export class CartService {
   constructor(private _HttpClient:HttpClient) { }
 
   cartNumber:BehaviorSubject<number>  = new BehaviorSubject(0)
-myHeaders:any = {
+  
+  myHeaders:any = {
             Token:localStorage.getItem(`_token`)
 };
   addToCart(id:string):Observable<any> {
