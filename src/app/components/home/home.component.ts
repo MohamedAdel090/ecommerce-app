@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 6
+        items: 5
       }
     },
     autoplay:true,
