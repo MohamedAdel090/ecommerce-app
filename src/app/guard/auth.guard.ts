@@ -8,34 +8,27 @@ export class AuthGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
-    // Check if localStorage is available
-    if (this.isLocalStorageAvailable()) {
-      // Check if the user is logged in
-      const isLoggedIn = !!localStorage.getItem('_token');
-      if (isLoggedIn) {
-        // User is logged in, allow access to the route
-        return true;
-      } else {
-        // User is not logged in, redirect to the login page
+    // Check if localStorage is defined and available
+    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      try {
+        // Try to access localStorage
+        const token = window.localStorage.getItem('token');
+        if (token) {
+          return true;
+        } else {
+          this.router.navigate(['/login']);
+          return false;
+        }
+      } catch (error) {
+        // If there's an error accessing localStorage, handle it gracefully
+        console.error('Error accessing localStorage:', error);
         this.router.navigate(['/login']);
         return false;
       }
     } else {
-      // localStorage is not available, redirect to the login page
+      // If localStorage is not defined, handle the case accordingly
+      console.error('localStorage is not available');
       this.router.navigate(['/login']);
-      return false;
-    }
-  }
-
-  private isLocalStorageAvailable(): boolean {
-    try {
-      // Perform a test operation on localStorage
-      const testKey = '__test__';
-      localStorage.setItem(testKey, testKey);
-      localStorage.removeItem(testKey);
-      return true;
-    } catch (e) {
-      // If an error occurs, localStorage is not available
       return false;
     }
   }

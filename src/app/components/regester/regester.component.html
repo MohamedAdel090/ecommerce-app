@@ -87,8 +87,8 @@
       <p *ngIf="registerForm.get('rePassword')?.getError('required')">
         rePassword is required
       </p>
-      <p *ngIf="registerForm.get('rePassword')?.getError('pattern')">
-        must be at least 6 char
+      <p *ngIf="registerForm.get('rePassword')?.getError('mismath')">
+        passowrd confermation is incorrect
       </p>
     </div>
   </div>

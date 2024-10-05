@@ -18,6 +18,11 @@ import { AuthLayoutComponent } from './components/layouts/auth-layout/AuthLayout
 const routes: Routes = [
 {path:'', canActivate:[AuthGuard],component:BlankLayoutComponent, children:[
   {path:'', redirectTo:'home',  pathMatch:'full'},
+
+  {path:'setting', loadChildren: ()=>import('./setting/setting.module').then((m)=>m.SettingModule) },
+
+
+
   {path:'home', canActivate:[AuthGuard], component:HomeComponent},
   {path:'products', canActivate:[AuthGuard],component:ProductsComponent},
   {path:'details/:id', canActivate:[AuthGuard],component:DetailsproductComponent},
