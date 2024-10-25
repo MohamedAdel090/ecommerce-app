@@ -72,10 +72,15 @@
     type="text"
     class="form-control my-2 w-50 mx-auto"
     placeholder="Search...."
+    [(ngModel)]="term"
   />
 
   <div class="row g-4">
-    <div *ngFor="let item of products" class="col-md-6 col-xl-2">
+    <!-- [ {}   ,{}   ,{}   ,{} ] -->
+    <div
+      *ngFor="let item of products | search : term"
+      class="col-md-6 col-xl-2"
+    >
       <div class="card h-100">
         <div role="button" [routerLink]="['/details', item._id]">
           <img class="card-img-top" [src]="item.imageCover" alt="Title" />

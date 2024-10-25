@@ -17,7 +17,7 @@ import { AuthLayoutComponent } from './components/layouts/auth-layout/AuthLayout
 import { BlankLayoutComponent } from './components/layouts/blank-layout/BlankLayoutComponent';
 import { StarComponent } from './components/star/star.component';
 import { CartComponent } from './components/cart/cart.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CuttextPipe } from './cuttext.pipe';
 import { RegisterComponent } from './components/register/register.component';
@@ -25,6 +25,7 @@ import { DetailsproductComponent } from './components/detailsproduct/detailsprod
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { PaymentComponent } from './components/payment/payment.component';
 import { AllordersComponent } from './components/allorders/allorders.component';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AllordersComponent } from './components/allorders/allorders.component';
     RegisterComponent,
     DetailsproductComponent,
     PaymentComponent,
-    AllordersComponent
+    AllordersComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { AllordersComponent } from './components/allorders/allorders.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

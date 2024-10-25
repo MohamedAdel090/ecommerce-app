@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
 
   categories:category[] = []
 
+  term:string = '';
+
   ngOnInit(): void {
     this._ApiDataService.getproducts().subscribe({
       next:(response)=>{
