@@ -52,7 +52,7 @@ handelRegistar():void{
       this._AuthService.registarForm(userData).subscribe({
         next:(response)=>{
           if(response.message === "success"){
-            this._Router.navigate(['/login'])
+            this._Router.navigate(['/home'])
             this.isLoding = false
           }
           console.log(response)

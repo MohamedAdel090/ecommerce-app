@@ -30,6 +30,8 @@
         "listitem": "off",
         "list": "off"
       }
-    ]
+    ],
+    "compat-api/css": "off",
+    "detect-css-reflows/composite": "off"
   }
 }

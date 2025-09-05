@@ -11,7 +11,7 @@
   })
   export class LoginComponent {
 
-        constructor(private _AuthService:AuthService, private _Router:Router){
+    constructor(private _AuthService:AuthService, private _Router:Router){
 
     }
     errmsg:string  = '';

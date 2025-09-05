@@ -1,14 +1,16 @@
 {
   "name": "ecommerce-app",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:ecommerce-app": "node dist/ecommerce-app/server/server.mjs"
-  },
+ "scripts": {
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build",
+  "test": "ng test",
+  "lint": "ng lint",
+  "e2e": "ng e2e",
+  "deploy": "ng build --output-path=dist --base-href=/ecommerce-app/ && git add . && git commit -m \"deploy build\" && git push origin main"
+}
+,
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.1.0",

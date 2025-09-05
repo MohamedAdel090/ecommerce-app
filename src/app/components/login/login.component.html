@@ -12,9 +12,7 @@
       class="form-control"
     />
     <div
-      *ngIf="
-        loginForm.get('email')?.touched && loginForm.get('email')?.errors
-      "
+      *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors"
       class="alert alert-danger"
     >
       <p *ngIf="loginForm.get('email')?.getError('required')">
@@ -35,8 +33,7 @@
     />
     <div
       *ngIf="
-        loginForm.get('password')?.touched &&
-        loginForm.get('password')?.errors
+        loginForm.get('password')?.touched && loginForm.get('password')?.errors
       "
       class="alert alert-danger"
     >
